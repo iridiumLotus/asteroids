@@ -24,7 +24,7 @@ def main():
 
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     asteroidField = AsteroidField()
-        
+      
     print("Starting asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}\nScreen height: {SCREEN_HEIGHT}")
 
@@ -43,6 +43,7 @@ def main():
             for shot in shots:
                 if asteroid.collision(shot):
                     pygame.sprite.Sprite.kill(shot)
+                    asteroid.split()
         
         pygame.Surface.fill(screen, (0,0,0))
 
